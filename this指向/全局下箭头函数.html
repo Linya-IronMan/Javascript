@@ -1,0 +1,14 @@
+<script>
+
+    let showThis = () => {
+        console.log(this)
+    }
+
+    let o = {
+        showThis: showThis
+    }
+
+    showThis() // window
+    o.showThis() // window
+</script>
+ 

@@ -1,0 +1,65 @@
+<script>
+
+function a() {
+
+
+    let aa = () => {
+        console.log('aa', this)
+    }
+
+    aa()
+}
+
+// a() // aa window
+
+
+function b() {
+    function bb() {
+        console.log('bb', this)
+    }
+
+    bb()
+}
+
+// b() // bb window
+
+
+let o = {
+
+    b() {
+
+        let bb = () => {
+            console.log('bb', this)
+        }
+
+        bb()
+    }
+
+}
+
+o.b(); // bb o
+
+let p = {
+
+    c: () =>  {
+
+        let cc = () => {
+            console.log('cc', this)
+        }
+
+        cc()
+    }
+
+}
+
+// p.c(); // cc window
+
+
+let m = {
+
+    d: o.b
+
+}
+
+// m.d() // bb m
+</script>

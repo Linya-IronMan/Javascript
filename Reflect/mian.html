@@ -1,0 +1,25 @@
+<script>
+    let obj = {
+  _name: 'Linya',
+  get name() {  // 这个就是 target 对象中的getter
+    return this._name
+  }
+}
+
+let p = new Proxy(obj, {
+  get(target, proto, receiver) { 
+    // return target[proto]  // 如果是这样返回，obj1.name 值为 'Linya'
+    // return receiver[proto] // 会造成栈溢出 receiver  会不断调用getter
+    // return Reflect.get(target, proto, receiver) // 如果是这样返回，receiver指向obj1 输出 ‘Karla’
+  }
+})
+
+let obj1 = {
+  _name: 'Karla'
+}
+
+obj1.__proto__ = p  
+
+console.log(obj1._name)// Karla
+console.log(obj1.name)  // 主要在于这个的值是什么
+</script>
