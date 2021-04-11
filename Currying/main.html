@@ -14,17 +14,27 @@ function add() {
     // 利用toString隐式转换的特性，当最后执行时隐式转换，并计算最终的值返回
     // 函数的隐式转换在函数被调用的时候就可以了
     _adder.toString = function () {
+        console.log('toString')
         return _args.reduce(function (a, b) {
             return a + b;
         });
     }
     return _adder;
 }
-debugger
-console.log(add(1)(2)(3))                // 6
-// add(1, 2, 3)(4)             // 10
-// add(1)(2)(3)(4)(5)          // 15
-// add(2, 6)(1)                
 
+              // 6
+// let result = add(1, 2, 3)(4)             // 10
+let result = add(1)(2)(3)(4)(5)          // 15
+// let result = add(2, 6)(1)       
+// let a = result + 1            
+// console.log(result)  
+
+/*
+ * 必须有打印才会触发 toString
+ * 除了console 还有 +  == 这样子
+ * 这样应该是存在问题的，柯里化不应该基于语言特性。但是我不知道问题在哪里
+ * 这样基于语言特性在实际的应用过程中会产生什么问题。
+ * 
+ */
 
 </script>
