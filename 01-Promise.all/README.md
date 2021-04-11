@@ -1,0 +1,5 @@
+Promise.all 接收一个Promise的 iterable 类型（Map，Set，Array）
+并且只返回一个Promise的实例
+
+在iterable类型中的所有输入的promise的resolve都结束 或者没有Promise 的时候 进行 resolve
+只要任意一个输入的Promise的reject回调执行或者输入不合法的promise的时候 执行reject回调
