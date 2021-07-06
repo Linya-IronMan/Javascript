@@ -1,0 +1,13 @@
+{
+  "name": "jstest",
+  "version": "1.0.0",
+  "description": "测试js一些简单的基础问题",
+  "main": "index.js",
+  "repository": "https://github.com/Linya-IronMan/JS-Test.git",
+  "author": "Linya-IronMan <cdthanye32@163.com>",
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "scripts": {
+  }
+}
