@@ -11,17 +11,19 @@ class Scheduler {
 
     add(promiseCreater) {
         let _resolve;
-        this.queue.push(promiseCreater);
+        const pro = new Promise(resolve => _resolve = resolve);
+        this.queue.push({ p: promiseCreater, r: _resolve});
         
         const doNext = () => {
             // 队列中存在任务，并且当前正在执行的任务数量小于最大值
             debugger 
-            if (this.queue.length) {
+            if (this.queue.length && this.queue.length < this.maxCount) {
                 this.count++;
-                this.queue.shift()().then(() => {
+                const task = this.queue.shift();
+                task.p().then(() => {
                     // 任务执行结束，输出结果
                     debugger
-                    _resolve(123); // 存在 resolve之后没有输出的情况
+                    task.r(123); // 存在 resolve之后没有输出的情况
                     debugger
                     this.count--;
 
@@ -30,13 +32,9 @@ class Scheduler {
             }
         }        
 
-        if (this.queue.length < this.maxCount) {
-            doNext();
-        }
+        doNext();
 
-        return new Promise((resolve) => {
-            _resolve = resolve;
-        })
+        return pro;
     }
 }
 
