@@ -11,7 +11,6 @@ class Scheduler {
 
     add(promiseCreater) {
         let _resolve;
-        this.queue.push(promiseCreater);
         
         const doNext = () => {
             // 队列中存在任务，并且当前正在执行的任务数量小于最大值
@@ -24,7 +23,6 @@ class Scheduler {
                     _resolve(123); // 存在 resolve之后没有输出的情况
                     debugger
                     this.count--;
-
                     doNext();
                 })
             }
