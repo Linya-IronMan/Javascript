@@ -16,7 +16,7 @@ class Scheduler {
         const doNext = () => {
             // 队列中存在任务，并且当前正在执行的任务数量小于最大值
             debugger 
-            if (this.queue.length && this.count < this.maxCount) {
+            if (this.queue.length) {
                 this.count++;
                 this.queue.shift()().then(() => {
                     // 任务执行结束，输出结果
@@ -30,7 +30,9 @@ class Scheduler {
             }
         }        
 
-        doNext();
+        if (this.queue.length < this.maxCount) {
+            doNext();
+        }
 
         return new Promise((resolve) => {
             _resolve = resolve;
