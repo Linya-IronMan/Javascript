@@ -1,0 +1,4 @@
+
+class MyButtom extends HTMLElement {
+    
+}
