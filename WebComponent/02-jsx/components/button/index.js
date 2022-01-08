@@ -1,10 +1,11 @@
-class MyButton extends HTMLElement {
+class MyButton extends HTMLButtonElement {
   static name = "my-button";
+  shadow = null;
+
   constructor() {
     super();
-    this.innerHTML = MyButton.name;
+    this.shadow = this.attachInternals({ mode: "close" });
   }
 }
 
-console.log(MyButton.name, "==== my buatton name ");
 export default MyButton;
