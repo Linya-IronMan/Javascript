@@ -7,12 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <template id="template">
+    <!-- <template id="template">
         <span>Hello World slot tempalte </span>
-    </template>
+    </template> -->
+    <link rel="import" href="./component/button/button.html">
+    <script type="module">
+      
+    </script>
     <script>
-    //     const template = document.querySelector("#template");
-    //     document.body.appendChild(template.content);
+        const template = document.querySelector("#temp-button");
+        console.log(template)
+        document.body.appendChild(template.content);
     // </script>
 </body>
 </html>
