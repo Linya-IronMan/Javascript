@@ -7,7 +7,8 @@
   "author": "Linya-IronMan <cdthanye32@163.com>",
   "license": "MIT",
   "devDependencies": {
+    "@polymer/polymer": "^3.4.1",
+    "raw-loader": "^4.0.2"
   },
-  "scripts": {
-  }
+  "scripts": {}
 }

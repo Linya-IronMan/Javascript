@@ -9,6 +9,14 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   devtool: "source-map", // 打包时如果出现了问题 定位到源码
+  module: {
+    rules: [
+      {
+        test: /\.template$/,
+        use: "raw-loader",
+      },
+    ],
+  },
   resolve: {
     modules: [
       path.resolve(__dirname, ""),

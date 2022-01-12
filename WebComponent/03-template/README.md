@@ -18,7 +18,7 @@ template 中的内容默认情况下是不会展示在你的页面中，虽然�
 - 注意：appendChild 参数是 `template.content`
 
 
-# 问题
+## 问题
 - [ ] 这种方法貌似很难直接应用于 WebComponent 的组件开发之中去? 
   - 如何引入这些template就是一个大问题。
     实际上查到了一个 `HTML imports ` 本来或许可以解决这个问题，但是很可惜，这个特性貌似要删除了
@@ -27,4 +27,10 @@ template 中的内容默认情况下是不会展示在你的页面中，虽然�
 - [ ] 网上看见有描述说，template 的特性可以用于开发SPA应用
 - [ ] Vue 这些组件库中是否有应用到 template 的特性？ vue中的template是否和这个有关？
 - [ ] 或许可以写一个 loader 处理 temp 文件，将temp文件添加id，添加到html中去，就类似Vue那样 SFC 的写法来书写WebComponent组件？
+- [ ] 或许可以
+
+# slot
+这个标签除了IE不支持，其他的都支持
+
+> HTML `<slot>` 元素 ，作为 Web Components 技术套件的一部分，是Web组件内的一个占位符。该占位符可以在后期使用自己的标记语言填充，这样您就可以创建单独的DOM树，并将它与其它的组件组合在一起。
 
