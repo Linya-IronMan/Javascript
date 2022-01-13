@@ -8,6 +8,7 @@
   "license": "MIT",
   "devDependencies": {
     "@polymer/polymer": "^3.4.1",
+    "lit": "^2.1.1",
     "raw-loader": "^4.0.2"
   },
   "scripts": {}
