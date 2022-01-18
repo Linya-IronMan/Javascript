@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module" src="index.js"></script>
+    <div id="app">
+
+        <me-card class="card-container" grid-cols="6" image="https://cdn.mos.cms.futurecdn.net/5PMe5hr8tjSS9Nq5d6Cebe.jpg">
+            <div slot="header" class="card-header">
+                Hello World
+            </div>
+            你们都不是我的对手
+            <div slot="functions" class="card-functions">
+                我要考研
+            </div>
+            <div slot="footer" class="card-fotter">
+                Footer 千里之行始于足下
+            </div>
+        </me-card>
+    </div>
+
+    <style>
+        .card-container {
+            width: 500px;
+        }
+        
+        .card-container .card-header {
+            background-color: green;
+        }
+    </style>
+</body>
+
+</html>

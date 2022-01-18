@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "sourceMap": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "strict": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
