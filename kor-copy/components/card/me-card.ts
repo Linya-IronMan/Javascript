@@ -176,7 +176,7 @@ export class meCard extends LitElement {
     this.dispatchEvent(new Event(`${name}-changed`));
   }
 }
-console.log("dfsdfsdfdfsdf");
+
 if (!window.customElements.get("me-card")) {
   window.customElements.define("me-card", meCard);
 }

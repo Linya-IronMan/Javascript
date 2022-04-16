@@ -7,8 +7,7 @@ module.exports = {
     entry: {
         ".": "./index.ts",
         "components/card": "./components/card/index.ts",
-        // "components/popover": "./components/popover/index.ts",
-        // "components/select": "./components/select/index.ts",
+        "components/button": "./components/button/index.ts",
     },
     mode: "production",
     optimization: {

@@ -12,9 +12,9 @@
     <script type="module" src="index.js"></script>
     <div id="app">
 
-        <me-card class="card-container" grid-cols="6" image="https://cdn.mos.cms.futurecdn.net/5PMe5hr8tjSS9Nq5d6Cebe.jpg">
+        <me-card class="card-container" flex-direction="row" image="https://cdn.mos.cms.futurecdn.net/5PMe5hr8tjSS9Nq5d6Cebe.jpg">
             <div slot="header" class="card-header">
-                Hello World
+                <span>HiHiHic!!</span> <span>Hello World</span>
             </div>
             你们都不是我的对手
             <div slot="functions" class="card-functions">
@@ -24,8 +24,11 @@
                 Footer 千里之行始于足下
             </div>
         </me-card>
-    </div>
 
+        <me-button>hello world</me-button>
+
+        <kor-card style="height: 100%" label="Label" icon="train" image="https://i.ytimg.com/vi/BfCwN4iy6T8/maxresdefault.jpg" flex-direction="Row"></kor-card>
+    </div>
     <style>
         .card-container {
             width: 500px;
