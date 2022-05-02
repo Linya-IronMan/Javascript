@@ -1,0 +1,14 @@
+<script>
+    const p1 = new Promise(resolve => {
+        resolve(123);
+    });
+
+    const p2 = p1.then(data => {
+        console.log('p2 then', data);
+        return p2;
+    });
+
+    const p3 = p2.then(data => {
+        console.log('p3 then', data);
+    });
+</script>

@@ -1,0 +1,128 @@
+<script>
+    function resolvePromise(value, resolve, reject, promise2) {
+        // 解决循环引用问题, 如果 then 返回的 Promise 与 回调函数的返回值相等, 需要报错
+        if (value === promise2) {
+            throw new Error('禁止循环调用 Promise');
+        }
+        if (value instanceof Promise) {
+            value.then(resolve, reject);
+        } else {
+            resolve(value);
+        }
+    }
+    class Promise {
+        constructor(executor) {
+            this.state = 'pending'; // 初始化 state 为等待状态
+            this.value = undefined; // 记录成功的值
+            this.reason = undefined; // 记录失败的值
+            this.onResolvedCallbacks = [];
+            this.onRejectedCallbacks = [];
+            const resolve = value => {
+                if (this.state === 'pending') {
+                    this.state = 'fulfilled';
+                    this.value = value;
+                    this.onResolvedCallbacks.forEach(fn => fn());
+                }
+            };
+            const reject = reason => {
+                if (this.state === 'pending') {
+                    this.state = 'rejected';
+                    this.reason = reason;
+                    this.onRejectedCallbacks.forEach(fn => fn());
+                }
+            };
+            try {
+                executor(resolve, reject);
+            } catch (err) {
+                reject(err);
+            }
+        }
+
+        then(onFulFilled, onRejected) {
+            const p = new Promise((resolve, reject) => {
+                if (this.state === 'fulfilled') {
+                    const r = onFulFilled(this.value);
+                    // 注意: 此时 p 还没有彻底生成, 所以需要一个异步操作, 让第4个参数能够拿到
+                    setTimeout(() => {
+                        resolvePromise(r, resolve, reject, p);
+                    }, 0);
+                }
+                if (this.state === 'rejected') {
+                    const e = onRejected(this.reason);
+                    reject(e);
+                }
+
+                if (this.state === 'pending') {
+                    setTimeout(() => {
+                        this.onResolvedCallbacks.push(() =>
+                            resolvePromise(
+                                onFulFilled(this.value),
+                                resolve,
+                                reject,
+                                p
+                            )
+                        );
+                    }, 0);
+                    this.onRejectedCallbacks.push(() =>
+                        reject(onRejected(this.value))
+                    );
+                }
+            });
+            return p;
+        }
+    }
+
+    Promise.resolve = function (value) {
+        return new Promise(resolve => resolve(value));
+    };
+
+    Promise.reject = function (value) {
+        return new Promise((resolve, reject) => reject(value));
+    };
+
+    Promise.race = function (promises) {
+        return new Promise((resolve, reject) => {
+            // 遍历 promises 看谁先满足条件, 就先让外城的 Promise 去 resolve
+            // Promise 的状态只能会修改一次, 只要第一个改了, 九成宫, 后续再修改, 也无效
+            // 因为有状态凝固
+            for (let i = 0; i < promises.length; i++) {
+                promises[i].then(resolve, reject);
+            }
+        });
+    };
+
+    Promise.all = function (promises) {
+        // 存储数据结果, 需要按顺序来
+        let arr = [];
+        let i = 0;
+        function processData(index, value, resolve) {
+            arr[index] = value;
+            i++;
+            console.log(i);
+            if (i === promises.length) {
+                resolve(arr);
+            }
+        }
+        return new Promise((resolve, reject) => {
+            for (let m = 0; m < promises.length; m++) {
+                promises[m].then(value => {
+                    processData(m, value, resolve);
+                }, reject);
+            }
+        });
+    };
+
+    const p1 = new Promise(resolve => {
+        setTimeout(() => resolve(300), 3000);
+    });
+
+    const p2 = new Promise(resolve => {
+        setTimeout(() => resolve(200), 2000);
+    });
+
+    const p3 = new Promise(resolve => {
+        setTimeout(() => resolve(100), 1000);
+    });
+    // Promise.race([p1, p2, p3]).then(v => console.log(v));
+    Promise.all([p1, p2, p3]).then(v => console.log(v, 'promise all'));
+</script>
