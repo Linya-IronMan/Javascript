@@ -27,3 +27,29 @@ export const flatten2 = (arr: any[]) => {
 // 功能测试
 const arr = [1, [2, [3], 4], 5];
 console.info(flatten2(arr));
+
+export const flattenDeep1 = (arr: any[]) => {
+    const res: any[] = [];
+
+    arr.forEach(item => {
+        if (Array.isArray(item)) {
+            res.push(...flattenDeep1(item));
+        } else {
+            res.push(item);
+        }
+    });
+    return res;
+};
+
+export const flattenDeep2 = (arr: any[]) => {
+    let res: any[] = [];
+    arr.forEach(item => {
+        if (Array.isArray(item)) {
+            res = res.concat(flattenDeep2(item));
+        } else {
+            res = res.concat(item);
+        }
+    });
+
+    return res;
+};
