@@ -1,0 +1,15 @@
+[package]
+name = "hello-wasm"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# 制定生成的库的类型。cdylib C-compatible dynamic library 创建一个动态连接库
+# 用于编译一个供其他编程语言加载的动态库
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.73"
+
