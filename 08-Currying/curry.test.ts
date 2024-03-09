@@ -1,4 +1,4 @@
-import { curry } from './curry';
+import { curry } from './_curry';
 
 describe('curry', () => {
     it('add', () => {

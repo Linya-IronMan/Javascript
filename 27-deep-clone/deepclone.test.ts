@@ -1,7 +1,7 @@
-import cloneDeep from './deepclone';
+import cloneDeep from './_deepclone';
 
 describe('深拷贝', () => {
-    it('值类型', () => {
+    it('值类型 & null', () => {
         expect(cloneDeep(100)).toBe(100);
         expect(cloneDeep('abc')).toBe('abc');
         expect(cloneDeep(null)).toBe(null);

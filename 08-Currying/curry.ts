@@ -2,7 +2,7 @@ export const curry = (fn: Function) => {
     const fnArgsLength = fn.length; // 传入函数的参数长度
     let args: any[] = [];
 
-    // NOTE: TS 中独立的函数，this 需要生命类型
+    // NOTE: TS 中独立的函数，this 需要声明类型
     function calc(this: any, ...newArgs: any[]) {
         // 积累参数
         args = [...args, ...newArgs];

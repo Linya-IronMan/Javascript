@@ -4,6 +4,9 @@
  * @param map weak map 为了避免循环引用
  */
 export default function cloneDeep(obj: any, map = new WeakMap()): any {
+    // 如果不是复杂类型 —— 直接返回 obj
+    // 如果是null —— 也直接返回 obj
+    // 判断复杂类型的方法 —— typeof obj
     if (typeof obj !== 'object' || obj == null) return obj;
 
     const objFromMap = map.get(obj);

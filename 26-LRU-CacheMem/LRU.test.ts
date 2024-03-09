@@ -1,4 +1,4 @@
-import LRUCache from './LRU';
+import LRUCache from './_LRU';
 
 describe('LRU Cache', () => {
     it('get set', () => {

@@ -25,6 +25,9 @@ export default class LRUCache {
 
         if (data.size > this.length) {
             // NOTE: 如果超出了容量，则删除Map最老的元素
+            // NOTE: Map.keys().next() 获取到的就是优先级最差的元素
+            // NOTE: Map.set 设置的元素，遍历的时候处于最后
+            // NOTE: 内部的顺序类似于一个队列操作
             const delKey = data.keys().next().value;
             data.delete(delKey);
         }

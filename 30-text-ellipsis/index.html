@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="multiline-text">
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+            这是一段很长很长的文本，需要使用省略号来显示多余的部分。
+        </div>
+        <style>
+            .multiline-text {
+                display: -webkit-box; /* 启用弹性盒子布局 */
+                -webkit-line-clamp: 2; /* 设置最大显示行数 */
+                -webkit-box-orient: vertical; /* 设置弹性盒子的方向为垂直方向 */
+                overflow: hidden; /* 隐藏超出容器的内容 */
+                text-overflow: ellipsis;
+            }
+        </style>
+    </body>
+</html>

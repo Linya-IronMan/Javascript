@@ -4,13 +4,18 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <!-- 定义文档的基本信息和显示设置 -->
     </head>
     <body>
         <p>transition</p>
+        <!-- 显示文本 "transition" -->
         <div class="box"></div>
+        <!-- 使用类 "box" 的 div 元素，演示过渡效果 -->
 
         <p>animation</p>
+        <!-- 显示文本 "animation" -->
         <div class="box2"></div>
+        <!-- 使用类 "box2" 的 div 元素，演示动画效果 -->
 
         <style>
             .box {
@@ -18,10 +23,12 @@
                 height: 200px;
                 background-color: red;
                 transition: background-color 0.5s ease-in-out;
+                /* 定义一个红色正方形，当鼠标悬停时背景色改变，具有过渡效果 */
             }
 
             .box:hover {
                 background-color: blue;
+                /* 鼠标悬停时背景色变为蓝色 */
             }
 
             .box2 {
@@ -30,14 +37,17 @@
                 background-color: red;
                 position: absolute;
                 animation: move 2s linear infinite;
+                /* 定义一个红色正方形，绝对定位并应用动画，持续移动 */
             }
 
             @keyframes move {
                 0% {
                     left: 0;
+                    /* 动画开始时，left 值为 0 */
                 }
                 100% {
                     left: 100%;
+                    /* 动画结束时，left 值为 100%，使元素从左往右移动 */
                 }
             }
         </style>
