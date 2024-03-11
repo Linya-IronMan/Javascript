@@ -11,12 +11,15 @@
 </template>
 <script setup>
 import HelloWorld from './components/HelloWorld.vue';
-import init, { helloworld } from '../pkg/hello_wasm';
+import init, { hello_world, User, More } from '../pkg/my_rust_wasm';
 import { onMounted } from 'vue';
 
 onMounted(() => {
     init().then(() => {
-        helloworld('yes!');
+        const more = new More(18, 'female', ['lisa']);
+        const user = new User('张雅昕', more);
+        console.log(typeof more);
+        console.log(hello_world(user));
     });
 });
 </script>
