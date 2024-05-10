@@ -994,6 +994,11 @@
   "resolved" "https://registry.npmmirror.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
+"@esbuild/darwin-arm64@0.20.1":
+  "integrity" "sha512-Ylk6rzgMD8klUklGPzS414UQLa5NPXZD5tf8JmQU8GQrj6BrFA/Ic9tb2zRe1kOZyCbGl+e8VMbDRazCEBqPvA=="
+  "resolved" "https://registry.npmmirror.com/@esbuild/darwin-arm64/-/darwin-arm64-0.20.1.tgz"
+  "version" "0.20.1"
+
 "@iarna/toml@^2.2.0":
   "integrity" "sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg=="
   "resolved" "https://registry.npmmirror.com/@iarna/toml/-/toml-2.2.5.tgz"
@@ -2429,6 +2434,18 @@
   "resolved" "https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001589.tgz"
   "version" "1.0.30001589"
 
+"carbon@^0.5.0":
+  "integrity" "sha512-t5mGsf+Zx5jgOHJuHhz0v632X/y5Hez/IDJfZwN/8f6ry02cpJCoRrpGlJfpeqvSLPZM04j8iA6oJV2iOCdFhA=="
+  "resolved" "https://registry.npmmirror.com/carbon/-/carbon-0.5.0.tgz"
+  "version" "0.5.0"
+  dependencies:
+    "cohesion" "0.2.x"
+    "drip" "1.1.x"
+    "electron" "0.4.x"
+    "fsagent" "0.3.x"
+    "harbor" "0.2.x"
+    "sherlock" "*"
+
 "caseless@~0.12.0":
   "integrity" "sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw=="
   "resolved" "https://registry.npmmirror.com/caseless/-/caseless-0.12.0.tgz"
@@ -2622,6 +2639,14 @@
     "@types/q" "^1.5.1"
     "chalk" "^2.4.1"
     "q" "^1.1.2"
+
+"cohesion@0.2.x":
+  "integrity" "sha512-mlNZA2+Lkig1Wl9tTwa2WxlnKQP2XD/8VeLvejAD7V2q9gfpCujOBqL/DDhTPsyBhm4j83IDHtpiFUYqW5DIpw=="
+  "resolved" "https://registry.npmmirror.com/cohesion/-/cohesion-0.2.0.tgz"
+  "version" "0.2.0"
+  dependencies:
+    "drip" "1.1.x"
+    "sherlock" "*"
 
 "collect-v8-coverage@^1.0.0":
   "integrity" "sha512-lHl4d5/ONEbLlJvaJNtsF/Lz+WvB07u2ycqTYbdrq7UypDXailES4valYb2eWiJFxZlVmpGekfqoxQhzyFdT4Q=="
@@ -3395,6 +3420,13 @@
   "resolved" "https://registry.npmmirror.com/dotenv/-/dotenv-5.0.1.tgz"
   "version" "5.0.1"
 
+"drip@1.1.x":
+  "integrity" "sha512-Db1uWNrndUsEpUSS86wUSAk71O70CBBtht5G9EaK8WsDP8ukOViXSupMog/aLjeAhhf/mMO77Ng04YpwuBtSMg=="
+  "resolved" "https://registry.npmmirror.com/drip/-/drip-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "tea-concat" "0.1.0"
+
 "duplexer2@~0.1.4":
   "integrity" "sha512-asLFVfWWtJ90ZyOUHMqk7/S2w2guQKxUI2itj3d92ADHhxUSbCMGi1f1cBcJ7xM1To+pE/Khbwo1yuNbMEPKeA=="
   "resolved" "https://registry.npmmirror.com/duplexer2/-/duplexer2-0.1.4.tgz"
@@ -3424,6 +3456,13 @@
   "integrity" "sha512-1PpuqJUFWoXZ1E54m8bsLPVYwIVCRzvaL+n5cjigGga4z854abDnFRc+cTa2th4S79kyGqya/1xoR7h+Y5G5lg=="
   "resolved" "https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.681.tgz"
   "version" "1.4.681"
+
+"electron@0.4.x":
+  "integrity" "sha512-Df03T/lkxnFmI+yxDTgZcVqc4fLLpZHTnfkUFAlgL8T4h/rIwI/KFBTqPfqIRs9TVo9rv27+YHVx9l/0tiIQ7g=="
+  "resolved" "https://registry.npmmirror.com/electron/-/electron-0.4.1.tgz"
+  "version" "0.4.1"
+  dependencies:
+    "drip" "1.1.x"
 
 "elliptic@^6.5.3", "elliptic@^6.5.4":
   "integrity" "sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ=="
@@ -3589,6 +3628,35 @@
     "is-callable" "^1.1.4"
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
+
+"esbuild@^0.20.1":
+  "integrity" "sha512-OJwEgrpWm/PCMsLVWXKqvcjme3bHNpOgN7Tb6cQnR5n0TPbQx1/Xrn7rqM+wn17bYeT6MGB5sn1Bh5YiGi70nA=="
+  "resolved" "https://registry.npmmirror.com/esbuild/-/esbuild-0.20.1.tgz"
+  "version" "0.20.1"
+  optionalDependencies:
+    "@esbuild/aix-ppc64" "0.20.1"
+    "@esbuild/android-arm" "0.20.1"
+    "@esbuild/android-arm64" "0.20.1"
+    "@esbuild/android-x64" "0.20.1"
+    "@esbuild/darwin-arm64" "0.20.1"
+    "@esbuild/darwin-x64" "0.20.1"
+    "@esbuild/freebsd-arm64" "0.20.1"
+    "@esbuild/freebsd-x64" "0.20.1"
+    "@esbuild/linux-arm" "0.20.1"
+    "@esbuild/linux-arm64" "0.20.1"
+    "@esbuild/linux-ia32" "0.20.1"
+    "@esbuild/linux-loong64" "0.20.1"
+    "@esbuild/linux-mips64el" "0.20.1"
+    "@esbuild/linux-ppc64" "0.20.1"
+    "@esbuild/linux-riscv64" "0.20.1"
+    "@esbuild/linux-s390x" "0.20.1"
+    "@esbuild/linux-x64" "0.20.1"
+    "@esbuild/netbsd-x64" "0.20.1"
+    "@esbuild/openbsd-x64" "0.20.1"
+    "@esbuild/sunos-x64" "0.20.1"
+    "@esbuild/win32-arm64" "0.20.1"
+    "@esbuild/win32-ia32" "0.20.1"
+    "@esbuild/win32-x64" "0.20.1"
 
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
@@ -4017,6 +4085,11 @@
   "resolved" "https://registry.npmmirror.com/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+"fsagent@0.3.x":
+  "integrity" "sha512-D5/AdF1BeONusfBzKW6jZpQKFH7IRf/p7ZfJ7c8Vs+RrQagpzmfyNrEtv3oo1du6o+khDlJij6G28z8ynbdJZA=="
+  "resolved" "https://registry.npmmirror.com/fsagent/-/fsagent-0.3.0.tgz"
+  "version" "0.3.0"
+
 "fsevents@^1.2.7":
   "integrity" "sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw=="
   "resolved" "https://registry.npmmirror.com/fsevents/-/fsevents-1.2.13.tgz"
@@ -4261,6 +4334,11 @@
   dependencies:
     "ajv" "^6.12.3"
     "har-schema" "^2.0.0"
+
+"harbor@0.2.x":
+  "integrity" "sha512-Xb0IijmLy1ffjNTybtvkiqWyu8Te7/CFjPv2IE3SNQi9OoEcBEDxNfmlHoFnTgWqCoJpeqVtBeR7LJVmuwdX7Q=="
+  "resolved" "https://registry.npmmirror.com/harbor/-/harbor-0.2.0.tgz"
+  "version" "0.2.0"
 
 "has-ansi@^2.0.0":
   "integrity" "sha512-C8vBJ8DwUCx19vhm7urhTuUsr4/IyP6l4VzNQDv+ryHQObW3TTTp9yB68WpYgRe2bbaGuZ/se74IqFeVnMnLZg=="
@@ -7787,6 +7865,11 @@
   "resolved" "https://registry.npmmirror.com/shebang-regex/-/shebang-regex-3.0.0.tgz"
   "version" "3.0.0"
 
+"sherlock@*":
+  "integrity" "sha512-D2BCFWFZMfElOmY1bryu6lwNTlRMPwyXB//K8XR5hlTxOLory2nqz/n3G/VdABPKU8NXaD90i2JQ+Wwh4cTWoA=="
+  "resolved" "https://registry.npmmirror.com/sherlock/-/sherlock-1.1.0.tgz"
+  "version" "1.1.0"
+
 "side-channel@^1.0.4":
   "integrity" "sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw=="
   "resolved" "https://registry.npmmirror.com/side-channel/-/side-channel-1.0.4.tgz"
@@ -8203,6 +8286,11 @@
   "integrity" "sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ=="
   "resolved" "https://registry.npmmirror.com/tapable/-/tapable-2.2.1.tgz"
   "version" "2.2.1"
+
+"tea-concat@0.1.0":
+  "integrity" "sha512-DtBfLLwLBUKht/GDHCsfIyLrygum21JdPW438Srutjj2xVtDNrD0RCP/1TGw9as+R2p3W2nPYtkiGqCpVYes+A=="
+  "resolved" "https://registry.npmmirror.com/tea-concat/-/tea-concat-0.1.0.tgz"
+  "version" "0.1.0"
 
 "terser-webpack-plugin@^5.3.10":
   "integrity" "sha512-BKFPWlPDndPs+NGGCr1U59t0XScL5317Y0UReNrHaw9/FwhPENlq6bfgs+4yPfyP51vqC1bQ4rp1EfXW5ZSH9w=="
