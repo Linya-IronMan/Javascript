@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Selection with Div</title>
+    <style>
+        #container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+        }
+        .selection {
+            position: absolute;
+            border: 2px dashed blue;
+            pointer-events: none; /* 避免选区div影响鼠标事件 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="app.js"></script>
+</body>
+</html>

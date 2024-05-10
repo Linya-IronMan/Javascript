@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SVG Zoom Demo with Font Size</title>
+<style>
+  #container {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  svg {
+    font-size: 10px; /* Initial font size */
+  }
+</style>
+</head>
+<body>
+<div id="container">
+  <svg id="mySVG" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="none" stroke="black" />
+    <!-- Increased stroke-width and adjusted paths to cover the entire viewBox -->
+    <path d="M 0 10 L 100 10 M 0 20 L 100 20 M 0 30 L 100 30 M 0 40 L 100 40 M 0 50 L 100 50 M 0 60 L 100 60 M 0 70 L 100 70 M 0 80 L 100 80 M 0 90 L 100 90" stroke="grey" stroke-width="0.5"/>
+    <path d="M 10 0 L 10 100 M 20 0 L 20 100 M 30 0 L 30 100 M 40 0 L 40 100 M 50 0 L 50 100 M 60 0 L 60 100 M 70 0 L 70 100 M 80 0 L 80 100 M 90 0 L 90 100" stroke="grey" stroke-width="0.5"/>
+  </svg>
+</div>
+
+<script>
+  const svgElement = document.getElementById('mySVG');
+  let fontSize = 10; // Initial font size
+
+  document.addEventListener('wheel', function(event) {
+    if (event.metaKey) {  // 对于Windows用户，也可以检查event.metaKey以支持Mac用户
+      event.preventDefault();
+      fontSize += event.deltaY * -0.1;
+      fontSize = Math.max(1, fontSize); // Prevent font size from going below 1
+      svgElement.style.fontSize = `${fontSize}px`;
+    }
+  });
+</script>
+</body>
+</html>
