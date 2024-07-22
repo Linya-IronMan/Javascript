@@ -3,6 +3,8 @@ node_modules
 dist/**
 *-lock.yaml
 
+**/target/**
+
 .DS_Store
 
 *-debug.log
