@@ -1,9 +1,10 @@
 {
-  "name": "40-ThreeTemplate",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "three.js": "^0.77.1"
-  }
+	"name": "40-ThreeTemplate",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"@types/three": "^0.169.0",
+		"three": "^0.169.0"
+	}
 }

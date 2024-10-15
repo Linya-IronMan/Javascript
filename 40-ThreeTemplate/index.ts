@@ -11,7 +11,11 @@ const scene = new THREE.Scene();
 // 物体形状：几何体
 const geometry = new THREE.BoxGeometry(100, 100, 100);
 // 物体外观：材质
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+const material = new THREE.MeshBasicMaterial({
+	color: 0xff0000,
+	transparent: true,
+	opacity: 0.5,
+});
 // 物体：网格 网格模型 Mesh 将物体的材质以及几何体纳入网格模型
 const mesh = new THREE.Mesh(geometry, material);
 // 物体网格：模型位置：.position
@@ -29,3 +33,9 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(width, height);
 renderer.render(scene, camera);
 document.body.appendChild(renderer.domElement);
+
+/******** 三维坐标系 *******/
+const axesHelper = new THREE.AxesHelper(150);
+scene.add(axesHelper);
+
+renderer.render(scene, camera);
