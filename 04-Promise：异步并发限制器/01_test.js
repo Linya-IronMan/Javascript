@@ -14,7 +14,6 @@ class Scheduler {
         
         const doNext = () => {
             // 队列中存在任务，并且当前正在执行的任务数量小于最大值
-            debugger 
             if (this.queue.length && this.count < this.maxCount) {
                 this.count++;
                 this.queue.shift()().then(() => {
@@ -39,20 +38,14 @@ class Scheduler {
 
 const timeout = (time) => new Promise(resolve => {
     setTimeout(resolve, time)
-    debugger
 })
 
 const scheduler = new Scheduler()
 const addTask = (time, order) => {
     scheduler.add(() => timeout(time)).then((data) => console.log(order, data))
 }
-debugger
 addTask(3000, '1')
-debugger
 addTask(1000, '2')
-debugger
 addTask(4000, '3')
-debugger
 addTask(4000, '4')
-debugger
-// 结果： 2 3 1 4 
+// 结果： 2 3 1 4

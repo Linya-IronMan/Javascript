@@ -40,20 +40,14 @@ class Scheduler {
 const timeout = (time) =>
   new Promise((resolve) => {
     setTimeout(resolve, time);
-    debugger;
   });
 
 const scheduler = new Scheduler();
 const addTask = (time, order) => {
   scheduler.add(() => timeout(time)).then((data) => console.log(order, data));
 };
-debugger;
 addTask(3000, "1");
-debugger;
 addTask(1000, "2");
-debugger;
 addTask(4000, "3");
-debugger;
 addTask(4000, "4");
-debugger;
 // 结果： 2 3 1 4
