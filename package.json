@@ -1,27 +1,27 @@
 {
-  "name": "jstest",
-  "version": "1.0.0",
-  "description": "测试js一些简单的基础问题",
-  "main": "index.js",
-  "repository": "https://github.com/Linya-IronMan/JS-Test.git",
-  "author": "Linya-IronMan <cdthanye32@163.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@polymer/polymer": "^3.4.1",
-    "@types/jest": "^29.5.12",
-    "carbon": "^0.5.0",
-    "jest": "^29.7.0",
-    "json-server": "^0.17.0",
-    "lit": "^2.1.1",
-    "mocha": "^10.3.0",
-    "parcel-bundler": "^1.12.5",
-    "raw-loader": "^4.0.2",
-    "ts-jest": "^29.1.2"
-  },
-  "scripts": {
-    "start": "parcel ./22-dom-traverse/index.html"
-  },
-  "dependencies": {
-    "esbuild": "^0.20.1"
-  }
+	"name": "jstest",
+	"version": "1.0.0",
+	"description": "测试js一些简单的基础问题",
+	"main": "index.js",
+	"repository": "https://github.com/Linya-IronMan/JS-Test.git",
+	"author": "Linya-IronMan <cdthanye32@163.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@polymer/polymer": "^3.4.1",
+		"@types/jest": "^29.5.12",
+		"carbon": "^0.5.0",
+		"jest": "^29.7.0",
+		"json-server": "^0.17.0",
+		"lit": "^2.1.1",
+		"mocha": "^10.3.0",
+		"parcel-bundler": "^1.12.5",
+		"raw-loader": "^4.0.2",
+		"ts-jest": "^29.1.2"
+	},
+	"scripts": {
+		"start": "parcel ./22-dom-traverse/index.html"
+	},
+	"dependencies": {
+		"esbuild": "^0.20.1"
+	}
 }
