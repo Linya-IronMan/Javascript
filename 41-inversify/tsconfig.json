@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"target": "es2022",
+		"lib": ["es2022", "DOM", "DOM.Iterable"],
+		"types": ["reflect-metadata"],
+		"module": "commonjs",
+		"experimentalDecorators": true, // 开启装饰器
+		"emitDecoratorMetadata": true // 开启元数据发射
+	}
+}
