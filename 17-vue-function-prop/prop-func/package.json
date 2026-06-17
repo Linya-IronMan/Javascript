@@ -1,10 +1,22 @@
 {
-  "name": "prop-func",
+  "name": "vue-function-prop",
   "version": "0.1.0",
   "private": true,
+  "description": "Vue function prop 传递实验",
+  "demoId": "17-vue-function-prop",
+  "demoName": "Vue function prop",
+  "demoAlias": "vue-function-prop",
+  "demoCategory": "框架与组件",
+  "demoTags": [
+    "Vue",
+    "Props",
+    "组件通信"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "vue-cli-service serve"
   },
   "dependencies": {
     "core-js": "^3.6.5",

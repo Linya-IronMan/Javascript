@@ -1,0 +1,14 @@
+{
+  "name": "array-reduce",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Array reduce 实验",
+  "demoId": "32",
+  "demoName": "array reduce",
+  "demoAlias": "array-reduce",
+  "demoCategory": "工具函数 / 数据结构",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "node index.js"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "promise-all-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "手写 Promise.all 并观察多个异步任务的聚合行为",
+  "demoId": "01",
+  "demoName": "Promise.all",
+  "demoAlias": "promise-all",
+  "demoCategory": "Promise / 异步",
+  "demoTags": [
+    "Promise",
+    "异步",
+    "手写实现"
+  ],
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "node main.js"
+  }
+}

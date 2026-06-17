@@ -1,0 +1,14 @@
+{
+  "name": "rect-select",
+  "version": "1.0.0",
+  "private": true,
+  "description": "框选交互实验",
+  "demoId": "33",
+  "demoName": "rect select",
+  "demoAlias": "rect-select",
+  "demoCategory": "DOM 与样式",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm --dir .. exec parcel 33-rect-select/index.html"
+  }
+}

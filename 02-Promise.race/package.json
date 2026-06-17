@@ -1,0 +1,14 @@
+{
+  "name": "promise-race",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Promise.race 行为实验",
+  "demoId": "02",
+  "demoName": "Promise.race",
+  "demoAlias": "promise-race",
+  "demoCategory": "Promise / 异步",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "node main.js"
+  }
+}

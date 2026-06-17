@@ -1,14 +1,24 @@
 {
   "name": "02-jsx",
   "version": "1.0.0",
-  "description": "",
+  "description": "WebComponent Webpack 模板实验",
   "main": "index.js",
   "browser": {
     "crypto": false
   },
+  "demoId": "webcomponent-webpack",
+  "demoName": "WebComponent Webpack Template",
+  "demoAlias": "webcomponent-webpack",
+  "demoCategory": "框架与组件",
+  "demoTags": [
+    "WebComponent",
+    "Webpack"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack server "
+    "dev": "webpack server",
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "webpack server"
   },
   "keywords": [],
   "author": "",

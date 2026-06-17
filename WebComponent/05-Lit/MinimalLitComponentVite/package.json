@@ -10,9 +10,21 @@
     "dist",
     "types"
   ],
+  "description": "Lit + Vite WebComponent 实验项目",
+  "demoId": "lit-vite",
+  "demoName": "Lit Vite WebComponent",
+  "demoAlias": "lit-vite",
+  "demoCategory": "框架与组件",
+  "demoTags": [
+    "Lit",
+    "Vite",
+    "WebComponent"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "vite"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",

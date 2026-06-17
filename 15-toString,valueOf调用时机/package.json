@@ -1,0 +1,14 @@
+{
+  "name": "tostring-valueof-timing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "toString 与 valueOf 调用时机实验",
+  "demoId": "15",
+  "demoName": "toString valueOf 调用时机",
+  "demoAlias": "tostring-valueof-timing",
+  "demoCategory": "JavaScript 语言机制",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "node main.js"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "tostring-valueof",
+  "version": "1.0.0",
+  "private": true,
+  "description": "toString 与 valueOf 实验",
+  "demoId": "31",
+  "demoName": "toString valueOf",
+  "demoAlias": "tostring-valueof",
+  "demoCategory": "JavaScript 语言机制",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "node index.js"
+  }
+}

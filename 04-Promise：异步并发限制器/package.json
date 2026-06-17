@@ -1,0 +1,14 @@
+{
+  "name": "promise-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Promise 并发限制器实验",
+  "demoId": "04",
+  "demoName": "Promise 异步并发限制器",
+  "demoAlias": "promise-scheduler",
+  "demoCategory": "Promise / 异步",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "node index.js"
+  }
+}

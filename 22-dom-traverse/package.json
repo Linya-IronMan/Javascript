@@ -1,0 +1,14 @@
+{
+  "name": "dom-traverse",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DOM 遍历实验",
+  "demoId": "22",
+  "demoName": "DOM Traverse",
+  "demoAlias": "dom-traverse",
+  "demoCategory": "DOM 与样式",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm --dir .. exec parcel 22-dom-traverse/index.html"
+  }
+}

@@ -1,12 +1,25 @@
 {
-  "name": "my-vue-app",
+  "name": "wasm-vue-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "Rust WASM 与 Vue 集成实验",
+  "demoId": "28-vue-wasm",
+  "demoName": "WASM Vue App",
+  "demoAlias": "wasm-vue",
+  "demoCategory": "图形与跨语言",
+  "demoTags": [
+    "WASM",
+    "Rust",
+    "Vue",
+    "Vite"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "vite"
   },
   "dependencies": {
     "vue": "^3.4.19"

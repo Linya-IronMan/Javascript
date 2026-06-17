@@ -1,23 +1,34 @@
 {
-    "name": "kor-copy",
-    "version": "1.0.0",
-    "main": "index.js",
-    "license": "MIT",
-    "dependencies": {
-        "lit": "^2.1.1"
-    },
-    "devDependencies": {
-        "copy-webpack-plugin": "^5.1.2",
-        "html-webpack-plugin": "^3.2.0",
-        "lerna": "^3.20.2",
-        "terser-webpack-plugin": "^2.3.8",
-        "ts-loader": "^6.2.2",
-        "typescript": "^3.9.9",
-        "webpack": "^4.46.0",
-        "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "^3.11.2"
-    },
-    "scripts": {
-        "start": "webpack-dev-server --config webpack.dev.config.js"
-    }
+  "name": "kor-copy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Lit 组件库实验",
+  "demoId": "kor-copy",
+  "demoName": "kor-copy 组件库",
+  "demoAlias": "kor-copy",
+  "demoCategory": "框架与组件",
+  "demoTags": [
+    "Lit",
+    "WebComponent",
+    "组件库"
+  ],
+  "dependencies": {
+    "lit": "^2.1.1"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.1.2",
+    "html-webpack-plugin": "^3.2.0",
+    "lerna": "^3.20.2",
+    "terser-webpack-plugin": "^2.3.8",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.9.9",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.config.js",
+    "prestart": "pnpm install --ignore-scripts"
+  }
 }

@@ -1,6 +1,8 @@
 {
 	"name": "jstest",
 	"version": "1.0.0",
+	"private": true,
+	"packageManager": "pnpm@10.30.3",
 	"description": "测试js一些简单的基础问题",
 	"main": "index.js",
 	"repository": "https://github.com/Linya-IronMan/JS-Test.git",
@@ -19,7 +21,10 @@
 		"ts-jest": "^29.1.2"
 	},
 	"scripts": {
-		"start": "parcel ./22-dom-traverse/index.html"
+		"demo": "node scripts/run-project.js",
+		"list": "node scripts/list-projects.js",
+		"docs:index": "node scripts/generate-index.js",
+		"test": "jest"
 	},
 	"dependencies": {
 		"esbuild": "^0.20.1"

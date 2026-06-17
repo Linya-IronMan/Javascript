@@ -1,16 +1,26 @@
 {
-	"name": "41-inversify",
-	"version": "1.0.0",
-	"description": "用于学习 InversifyJS 框架",
-	"scripts": {
-		"start": "ts-node ./index.ts"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"inversify": "^7.11.0",
-		"reflect-metadata": "^0.2.2"
-	},
-	"devDependencies": {}
+  "name": "41-inversify",
+  "version": "1.0.0",
+  "description": "用于学习 InversifyJS 框架",
+  "demoId": "41-inversify",
+  "demoName": "InversifyJS",
+  "demoAlias": "inversify",
+  "demoCategory": "框架与组件",
+  "demoTags": [
+    "InversifyJS",
+    "依赖注入",
+    "TypeScript"
+  ],
+  "scripts": {
+    "start": "ts-node ./index.ts",
+    "prestart": "pnpm install --ignore-scripts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inversify": "^7.11.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {}
 }

@@ -1,0 +1,14 @@
+{
+  "name": "esmodule-reference",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ESModule 引用传递实验",
+  "demoId": "41-esmodule",
+  "demoName": "ESModule 引用传递",
+  "demoAlias": "esmodule-reference",
+  "demoCategory": "JavaScript 语言机制",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "node main.js"
+  }
+}

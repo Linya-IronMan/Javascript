@@ -1,20 +1,30 @@
 {
-    "name": "04-polymer",
-    "version": "1.0.0",
-    "description": "",
-    "main": "MyButton.js",
-    "type": "module",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "@polymer/polymer": "^3.4.1"
-    },
-    "dependencies": {
-        "@popperjs/core": "^2.11.2",
-        "popper.js": "^1.16.1"
-    }
+  "name": "webcomponent-polymer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Polymer WebComponent 实验",
+  "demoId": "webcomponent-polymer",
+  "demoName": "WebComponent Polymer",
+  "demoAlias": "webcomponent-polymer",
+  "demoCategory": "框架与组件",
+  "demoTags": [
+    "WebComponent",
+    "Polymer"
+  ],
+  "main": "MyButton.js",
+  "type": "module",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm --dir ../.. exec parcel WebComponent/04-polymer/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@polymer/polymer": "^3.4.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.2",
+    "popper.js": "^1.16.1"
+  }
 }

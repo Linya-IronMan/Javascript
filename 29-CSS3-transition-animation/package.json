@@ -1,0 +1,14 @@
+{
+  "name": "css3-transition-animation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CSS3 transition 与 animation 实验",
+  "demoId": "29",
+  "demoName": "CSS3 transition animation",
+  "demoAlias": "css3-transition-animation",
+  "demoCategory": "DOM 与样式",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm --dir .. exec parcel 29-CSS3-transition-animation/index.html"
+  }
+}
