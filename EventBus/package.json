@@ -1,0 +1,19 @@
+{
+  "name": "eventbus-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "实现 on、once、off、emit 自定义事件总线",
+  "demoId": "25",
+  "demoName": "EventBus",
+  "demoAlias": "eventbus",
+  "demoCategory": "工具函数 / 数据结构",
+  "demoTags": [
+    "EventBus",
+    "发布订阅",
+    "TypeScript"
+  ],
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm --dir .. test -- --runTestsByPath EventBus/eventbus.test.ts"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "promise-impl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Promise 状态流转、回调缓存和链式调用实验",
+  "demoId": "03",
+  "demoName": "Promise 简单实现",
+  "demoAlias": "promise-impl",
+  "demoCategory": "Promise / 异步",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm --dir .. exec parcel Promise：简单实现/index.html"
+  }
+}

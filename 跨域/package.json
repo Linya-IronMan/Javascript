@@ -1,0 +1,14 @@
+{
+  "name": "cors-cookie",
+  "version": "1.0.0",
+  "private": true,
+  "description": "跨域 Cookie 实验",
+  "demoId": "06",
+  "demoName": "跨域 Cookie",
+  "demoAlias": "cors-cookie",
+  "demoCategory": "网络与跨域",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm --dir .. exec parcel 跨域/跨域cookie.html"
+  }
+}

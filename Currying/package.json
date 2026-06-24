@@ -1,0 +1,14 @@
+{
+  "name": "currying",
+  "version": "1.0.0",
+  "private": true,
+  "description": "函数柯里化实验",
+  "demoId": "08",
+  "demoName": "Currying",
+  "demoAlias": "currying",
+  "demoCategory": "JavaScript 语言机制",
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm --dir .. test -- --runTestsByPath Currying/curry.test.ts"
+  }
+}

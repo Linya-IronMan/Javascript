@@ -1,0 +1,24 @@
+{
+  "name": "ThreeTemplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Three.js + TypeScript 基础学习模板",
+  "demoId": "40",
+  "demoName": "Three.js 模板",
+  "demoAlias": "three",
+  "demoCategory": "图形与跨语言",
+  "demoTags": [
+    "Three.js",
+    "WebGL",
+    "TypeScript"
+  ],
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "pnpm exec parcel index.html"
+  },
+  "dependencies": {
+    "@types/three": "^0.169.0",
+    "three": "^0.169.0"
+  }
+}

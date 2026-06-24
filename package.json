@@ -1,32 +1,240 @@
 {
-	"name": "jstest",
-	"version": "1.0.0",
-	"private": true,
-	"packageManager": "pnpm@10.30.3",
-	"description": "测试js一些简单的基础问题",
-	"main": "index.js",
-	"repository": "https://github.com/Linya-IronMan/JS-Test.git",
-	"author": "Linya-IronMan <cdthanye32@163.com>",
-	"license": "MIT",
-	"devDependencies": {
-		"@polymer/polymer": "^3.4.1",
-		"@types/jest": "^29.5.12",
-		"carbon": "^0.5.0",
-		"jest": "^29.7.0",
-		"json-server": "^0.17.0",
-		"lit": "^2.1.1",
-		"mocha": "^10.3.0",
-		"parcel-bundler": "^1.12.5",
-		"raw-loader": "^4.0.2",
-		"ts-jest": "^29.1.2"
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/modelrun-job/schema.json",
+	"title": "目标生成任务参数 Schema",
+	"description": "用于前后端对接的 PARAMS / ENABLEAI_TASK_PARAMS 参数定义。背景图来自输入 jsonl；目标素材图通过 targetImagePaths 传入，列表中每个元素都是前端上传后的目标图对象路径，运行时默认按已提取前景处理，不再要求单独标注文件或额外 SAM 处理。GF-SAM 的参考样本目录属于后端内部实现；前端仅在 bgType=gf_sam 时选择内置样本组名称。",
+	"type": "object",
+	"additionalProperties": true,
+	"properties": {
+		"targetImagePaths": {
+			"type": "array",
+			"title": "目标图路径列表",
+			"description": "前端上传后的目标图对象路径列表。默认使用 Huawei 对象存储配置下载；建议使用带透明通道的 PNG 以保留真实轮廓。",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"minLength": 1
+			},
+			"x-type": "image",
+			"imageSource": "dataset"
+		},
+		"numTargets": {
+			"type": "integer",
+			"title": "单张背景目标数量",
+			"description": "每张背景图上尝试贴入的目标数量。",
+			"minimum": 1,
+			"default": 2
+		},
+		"rotate": {
+			"type": "boolean",
+			"title": "随机旋转",
+			"description": "是否对目标切片做随机旋转。",
+			"default": true
+		},
+		"genType": {
+			"type": "string",
+			"title": "目标轮廓方式",
+			"description": "决定目标轮廓来源。上传目标图默认已提取前景，因此通常使用 bbox；watershed 仅在需要重新估计轮廓时使用。",
+			"oneOf": [
+				{
+					"const": "bbox",
+					"title": "直接使用上传目标",
+					"description": "按上传目标图的透明通道或整图轮廓直接贴入。"
+				},
+				{
+					"const": "watershed",
+					"title": "分水岭",
+					"description": "基于传统图像分割重新估计目标轮廓。"
+				}
+			],
+			"default": "bbox"
+		},
+		"fusion": {
+			"type": "boolean",
+			"title": "泊松融合",
+			"description": "是否使用 seamlessClone 做融合。",
+			"default": false
+		},
+		"bgType": {
+			"type": "string",
+			"title": "背景区域筛选方式",
+			"description": "控制背景可粘贴区域的筛选策略。",
+			"oneOf": [
+				{
+					"const": "none",
+					"title": "不筛选",
+					"description": "不做背景区域识别。"
+				},
+				{
+					"const": "pixel",
+					"title": "颜色识别",
+					"description": "根据参考区域颜色筛选可粘贴区域。"
+				},
+				{
+					"const": "watershed",
+					"title": "分水岭",
+					"description": "基于分水岭粗分背景可粘贴区域。"
+				},
+				{
+					"const": "gf_sam",
+					"title": "GF-SAM",
+					"description": "基于后端内置 GF-SAM 参考样本筛选背景可粘贴区域。"
+				}
+			],
+			"default": "none"
+		},
+		"scaling": {
+			"type": "boolean",
+			"title": "按类别缩放",
+			"description": "是否按类别参考尺度自动调整目标大小。",
+			"default": false
+		},
+		"classNames": {
+			"type": "array",
+			"title": "类别名称列表",
+			"description": "与 classScales 一一对应。",
+			"items": {
+				"type": "string"
+			},
+			"default": []
+		},
+		"classScales": {
+			"type": "array",
+			"title": "类别尺度列表",
+			"description": "与 classNames 一一对应。",
+			"items": {
+				"type": "number"
+			},
+			"default": []
+		},
+		"defaultScale": {
+			"type": "number",
+			"title": "默认尺度",
+			"description": "未命中类别尺度映射时的默认值。",
+			"default": 1.0
+		}
 	},
-	"scripts": {
-		"demo": "node scripts/run-project.js",
-		"list": "node scripts/list-projects.js",
-		"docs:index": "node scripts/generate-index.js",
-		"test": "jest"
-	},
+	"required": [
+		"targetImagePaths"
+	],
 	"dependencies": {
-		"esbuild": "^0.20.1"
-	}
+		"bgType": {
+			"oneOf": [
+				{
+					"properties": {
+						"bgType": {
+							"const": "none"
+						}
+					}
+				},
+				{
+					"properties": {
+						"bgType": {
+							"const": "pixel"
+						},
+						"bgPattern": {
+							"$ref": "#/$defs/bgPattern"
+						}
+					},
+					"required": [
+						"bgPattern"
+					]
+				},
+				{
+					"properties": {
+						"bgType": {
+							"const": "watershed"
+						}
+					}
+				},
+				{
+					"properties": {
+						"bgType": {
+							"const": "gf_sam"
+						},
+						"gfsamPattern": {
+							"$ref": "#/$defs/gfsamPattern"
+						}
+					},
+					"required": [
+						"gfsamPattern"
+					]
+				}
+			]
+		}
+	},
+	"$defs": {
+		"bgPattern": {
+			"type": "string",
+			"title": "颜色参考图路径",
+			"description": "仅在 bgType=pixel 时使用。前端上传后的背景颜色参考图对象路径，默认使用 Huawei 对象存储配置下载。",
+			"default": "",
+			"x-type": "image"
+		},
+		"gfsamPattern": {
+			"type": "string",
+			"title": "GF-SAM 样本组",
+			"description": "仅在 bgType=gf_sam 时使用。选择后端内置的 GF-SAM 参考样本组名称。",
+			"oneOf": [
+				{
+					"const": "道路识别",
+					"title": "道路识别",
+					"description": "使用内置道路样本组筛选可粘贴区域。"
+				},
+				{
+					"const": "水域识别",
+					"title": "水域识别",
+					"description": "使用内置水域样本组筛选可粘贴区域。"
+				}
+			],
+			"default": "道路识别"
+		}
+	},
+	"examples": [
+		{
+			"targetImagePaths": [
+				"modelrun-job/test-targets/5387.jpg",
+				"modelrun-job/test-targets/7692.png"
+			],
+			"numTargets": 2,
+			"rotate": true,
+			"genType": "bbox",
+			"fusion": false,
+			"bgType": "none",
+			"scaling": false,
+			"classNames": [],
+			"classScales": [],
+			"defaultScale": 1.0
+		},
+		{
+			"targetImagePaths": [
+				"modelrun-job/test-targets/19550.png"
+			],
+			"numTargets": 1,
+			"rotate": true,
+			"genType": "bbox",
+			"fusion": false,
+			"bgType": "pixel",
+			"bgPattern": "modelrun-job/test-patterns/water_ref.png",
+			"scaling": false,
+			"classNames": [],
+			"classScales": [],
+			"defaultScale": 1.0
+		},
+		{
+			"targetImagePaths": [
+				"modelrun-job/test-targets/19550.png"
+			],
+			"numTargets": 1,
+			"rotate": true,
+			"genType": "watershed",
+			"fusion": true,
+			"bgType": "gf_sam",
+			"gfsamPattern": "道路识别",
+			"scaling": false,
+			"classNames": [],
+			"classScales": [],
+			"defaultScale": 1.0
+		}
+	]
 }
