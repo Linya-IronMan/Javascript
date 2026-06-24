@@ -1,0 +1,20 @@
+{
+  "name": "postmessage-performance-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "测试 postMessage 传递大量 JSON 数据与使用可转移对象、SharedArrayBuffer 传递数据之间的性能对比",
+  "demoId": "42",
+  "demoName": "postMessage 性能对比",
+  "demoAlias": "post-message-performance",
+  "demoCategory": "Web APIs / 性能优化",
+  "demoTags": [
+    "postMessage",
+    "Web Worker",
+    "Transferable Objects",
+    "SharedArrayBuffer"
+  ],
+  "scripts": {
+    "prestart": "pnpm install --ignore-scripts",
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>postMessage 性能对比测试</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>postMessage 性能对比测试</h1>
+    <p class="subtitle">测试主线程与 Web Worker 传输大量 JSON 与二进制数据及共享内存的性能表现</p>
+
+    <!-- SharedArrayBuffer Compatibility Alert -->
+    <div id="sabWarning" class="notice notice-warning" style="margin-bottom: 2rem;">
+      <h4>⚠️ SharedArrayBuffer 未启用</h4>
+      <p>检测到当前环境未开启跨域隔离（Cross-Origin Isolation），或您的浏览器不支持 SharedArrayBuffer。要启用此测试，本地服务需要配置以下响应头：</p>
+      <code style="display: block; background: rgba(0,0,0,0.4); padding: 0.5rem; margin-top: 0.5rem; border-radius: 6px; font-family: monospace;">
+        Cross-Origin-Opener-Policy: same-origin<br>
+        Cross-Origin-Embedder-Policy: require-corp
+      </code>
+    </div>
+
+    <!-- Controls -->
+    <section class="controls-card">
+      <div class="control-group">
+        <label for="dataSize">数据量大小</label>
+        <select id="dataSize">
+          <option value="5" selected>5 MB</option>
+          <option value="10">10 MB</option>
+          <option value="20">20 MB</option>
+          <option value="50">50 MB</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="transferMode">数据格式与传输模式</label>
+        <select id="transferMode">
+          <option value="json-obj">JSON 对象 (Structured Clone)</option>
+          <option value="json-str">JSON 字符串 (Serialize + Copy)</option>
+          <option value="transferable" selected>ArrayBuffer (Transferable)</option>
+          <option value="sab">SharedArrayBuffer (Shared Memory)</option>
+        </select>
+      </div>
+
+      <button id="startBtn" class="btn-primary">启动基准测试</button>
+    </section>
+
+    <!-- Results Display -->
+    <section class="results-card">
+      <div class="results-header">
+        <span>实时吞吐量与耗时对比</span>
+        <button id="clearBtn" class="results-clear">清除历史记录</button>
+      </div>
+
+      <!-- Graphical representation (Bar chart) -->
+      <div class="chart-container">
+        <div class="chart-row">
+          <span class="chart-label">JSON 对象</span>
+          <div class="chart-bar-outer">
+            <div id="bar-json-obj" class="chart-bar-inner json-obj"></div>
+          </div>
+          <span id="val-json-obj" class="chart-val">--</span>
+        </div>
+
+        <div class="chart-row">
+          <span class="chart-label">JSON 字符串</span>
+          <div class="chart-bar-outer">
+            <div id="bar-json-str" class="chart-bar-inner json-str"></div>
+          </div>
+          <span id="val-json-str" class="chart-val">--</span>
+        </div>
+
+        <div class="chart-row">
+          <span class="chart-label">ArrayBuffer (可转移)</span>
+          <div class="chart-bar-outer">
+            <div id="bar-transferable" class="chart-bar-inner transferable"></div>
+          </div>
+          <span id="val-transferable" class="chart-val">--</span>
+        </div>
+
+        <div class="chart-row">
+          <span class="chart-label">SharedArrayBuffer</span>
+          <div class="chart-bar-outer">
+            <div id="bar-sab" class="chart-bar-inner sab"></div>
+          </div>
+          <span id="val-sab" class="chart-val">--</span>
+        </div>
+      </div>
+
+      <!-- History details table -->
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>模式</th>
+              <th>大小 (MB)</th>
+              <th>发送耗时</th>
+              <th>回传总耗时</th>
+              <th>吞吐率</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <tr>
+              <td colspan="5" style="text-align: center; color: var(--text-secondary);">暂无测试数据，请点击上方按钮启动测试。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Educational notice -->
+      <div class="notice">
+        <h4>💡 技术解析</h4>
+        <p>
+          <strong>JSON 对象 / 字符串</strong>：每次 <code>postMessage</code> 调用时，浏览器会在内部执行结构化克隆算法（Structured Clone Algorithm），这会在主线程与 Worker 之间深度拷贝数据，耗费 CPU 运算资源和内存分配时间。<br>
+          <strong>ArrayBuffer (Transferable)</strong>：利用可转移对象（Transferable Objects），在传输时直接将内存的所有权由主线程转移给 Worker（反之亦然）。此操作为零拷贝，耗时极低且不随数据增大而显著增长。<br>
+          <strong>SharedArrayBuffer</strong>：多线程直接共享一块连续的物理内存。无需拷贝，也无需转移所有权，配合 <code>Atomics</code> 可以实现几乎瞬时的并发数据存取。
+        </p>
+      </div>
+    </section>
+  </main>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
