@@ -1,0 +1,32 @@
+{
+  "name": "ts-decorator",
+  "version": "1.0.0",
+  "description": "TypeScript 装饰器语法全解（重点深挖 AOP 切面实现机制与洋葱执行模型）",
+  "demoId": "ts-decorator",
+  "demoName": "TypeScript 装饰器全解",
+  "demoAlias": "ts-decorator",
+  "demoCategory": "JavaScript 语言机制",
+  "demoTags": [
+    "TypeScript",
+    "装饰器",
+    "AOP",
+    "元编程",
+    "Decorator"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "dev": "tsc -w"
+  },
+  "keywords": [
+    "typescript",
+    "decorator",
+    "aop",
+    "metaprogramming"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
