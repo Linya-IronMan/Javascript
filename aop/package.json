@@ -1,0 +1,34 @@
+{
+  "name": "aop",
+  "version": "1.0.0",
+  "description": "面向切面编程 (AOP) 在 TypeScript 中的实现与应用（对比 Spring Boot AOP）",
+  "demoId": "aop",
+  "demoName": "AOP 面向切面编程",
+  "demoAlias": "aop",
+  "demoCategory": "设计模式",
+  "demoTags": [
+    "AOP",
+    "面向切面编程",
+    "装饰器",
+    "动态代理",
+    "TypeScript",
+    "SpringBoot对齐"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "dev": "tsc -w"
+  },
+  "keywords": [
+    "aop",
+    "aspect-oriented-programming",
+    "typescript",
+    "decorator",
+    "proxy"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
