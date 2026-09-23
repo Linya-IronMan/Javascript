@@ -37,6 +37,7 @@
 | 24 | instanceof 实现 | `instanceof` | `pnpm demo instanceof` | [README](../instanceof/README.md) |
 | 31 | toString valueOf | `tostring-valueof` | `pnpm demo tostring-valueof` | - |
 | 41-esmodule | ESModule 引用传递 | `esmodule-reference` | `pnpm demo esmodule-reference` | - |
+| ts-decorator | TypeScript 装饰器全解 | `ts-decorator` | `pnpm demo ts-decorator` | [README](../ts-decorator/README.md) |
 
 ## DOM 与样式
 
@@ -55,6 +56,7 @@
 |---|---|---|---|---|
 | 16 | 状态机 | `finite-state-machine` | `pnpm demo finite-state-machine` | - |
 | 19 | 设计模式 | `design-patterns` | `pnpm demo design-patterns` | - |
+| aop | AOP 面向切面编程 | `aop` | `pnpm demo aop` | [README](../aop/README.md) |
 
 ## 工具函数 / 数据结构
 
