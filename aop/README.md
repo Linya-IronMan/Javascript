@@ -4,8 +4,9 @@
 
 > 💡 **进阶阅读推荐**：  
 > 1. 概念与应用全景：👉 **[什么是 AOP：从第一性原理与生活故事看面向切面编程](./docs/what-is-aop.md)**（含 Mermaid 架构图、机场安检/汉堡包比喻、真实 6 大杀手级场景）  
-> 2. Advice 词源与心智模型：👉 **[深入理解 Advice：为什么 AOP 里的“通知/增强”在英文里叫“建议”？](./docs/what-is-advice.md)**（详解为什么叫建议？大将军与军师出谋划策模型及 1966 年 Lisp 历史）  
-> 3. TS 底层语法深度剖析：👉 **[深度剖析 @Around：底层基于什么 TS/JS 语法实现？](./docs/how-around-works.md)**（详解装饰器工厂、属性描述符劫持、闭包、显式 this 与泛型系统）
+> 2. 核心专有名词速通：👉 **[一文搞懂 AOP 核心术语：切面、切点、连接点、Target 到底是啥？](./docs/aop-core-concepts-explained.md)**（用巨星演唱会与安保团队故事，搞清 Target/Pointcut/JoinPoint/Weaving）  
+> 3. Advice 词源与心智模型：👉 **[深入理解 Advice：为什么 AOP 里的“通知/增强”在英文里叫“建议”？](./docs/what-is-advice.md)**（详解为什么叫建议？大将军与军师出谋划策模型及 1966 年 Lisp 历史）  
+> 4. TS 底层语法深度剖析：👉 **[深度剖析 @Around：底层基于什么 TS/JS 语法实现？](./docs/how-around-works.md)**（详解装饰器工厂、属性描述符劫持、闭包、显式 this 与泛型系统）
 
 ---
 

@@ -34,13 +34,13 @@
 
 ```mermaid
 graph TD
-    subgraph 传统的垂直业务流 (OOP 纵向抽象)
+    subgraph S1 ["传统的垂直业务流 - OOP 纵向抽象"]
         B1["用户服务 UserService<br>- 注册<br>- 登录<br>- 修改密码"]
         B2["订单服务 OrderService<br>- 下单<br>- 支付<br>- 取消订单"]
         B3["库存服务 InventoryService<br>- 扣减库存<br>- 补货<br>- 盘点"]
     end
 
-    subgraph 横切关注点 (AOP 水平织入)
+    subgraph S2 ["横切关注点 - AOP 水平织入"]
         A1["统一审计日志切面 (Logging)"]
         A2["声明式事务切面 (Transaction)"]
         A3["权限安全校验切面 (Security / Auth)"]
@@ -204,6 +204,7 @@ class OrderService {
 | 理论概念 | 对应源码文件 | 体验方式 |
 | :--- | :--- | :--- |
 | **五大通知与装饰器织入** | [`aop/src/core/decorators.ts`](file:///Users/linya/Code/Self/Javascript/aop/src/core/decorators.ts) | 查看 `@Before`, `@AfterReturning`, `@Around` 的纯 TS 实现 |
+| **AOP 核心专有名词速通** | [📖 切面/切点/连接点/Target 全解](./aop-core-concepts-explained.md) | 用巨星演唱会与安保团队故事，搞清 Target/Pointcut/JoinPoint/Weaving |
 | **Advice 词源与心智模型** | [📖 深入理解 Advice 概念与词源](./what-is-advice.md) | 详解为什么叫建议？大将军与军师出谋划策模型及 Lisp 历史 |
 | **@Around 底层 TS 语法拆解** | [📖 深度剖析 @Around 实现原理](./how-around-works.md) | 详解属性描述符、闭包、显式 this 与泛型 5 大底层语法 |
 | **动态代理与纯净织入** | [`aop/src/core/proxy-factory.ts`](file:///Users/linya/Code/Self/Javascript/aop/src/core/proxy-factory.ts) | 查看模拟 Spring CGLIB / JDK Proxy 的 `AopProxyFactory` |
