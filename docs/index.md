@@ -67,7 +67,7 @@
 | 27 | 深拷贝 | `deep-clone` | `pnpm demo deep-clone` | [README](../deep-clone/README.md) |
 | 32 | array reduce | `array-reduce` | `pnpm demo array-reduce` | - |
 | 35 | WorkerQueue | `workerqueue` | `pnpm demo workerqueue` | - |
-| 37 | bit mask | `bit-mask` | `pnpm demo bit-mask` | - |
+| 37 | bit mask | `bit-mask` | `pnpm demo bit-mask` | [README](../bit-mask/README.md) |
 
 ## 图形与跨语言
 
@@ -75,6 +75,12 @@
 |---|---|---|---|---|
 | 28-vue-wasm | WASM Vue App | `wasm-vue` | `pnpm demo wasm-vue` | [README](../WASM-HelloWorld-Rust/my-vue-app/README.md) |
 | 40 | Three.js 模板 | `three` | `pnpm demo three` | [README](../ThreeTemplate/README.md) |
+
+## Web APIs / 性能优化
+
+| 编号 | 项目 | 别名 | 启动命令 | 笔记 |
+|---|---|---|---|---|
+| 42 | postMessage 性能对比 | `post-message-performance` | `pnpm demo post-message-performance` | [README](../postMessagePerformanceTest/README.md) |
 
 ## 框架与组件
 
